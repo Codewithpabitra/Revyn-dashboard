@@ -15,7 +15,10 @@ export default function LandingPage() {
       <nav className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
         <span className="text-lg font-semibold">Revyn</span>
         <div className="flex items-center gap-4">
-          <Link href="/sign-in" className="text-sm text-gray-600 hover:text-black">
+          <Link
+            href="/sign-in"
+            className="text-sm text-gray-600 hover:text-black"
+          >
             Sign in
           </Link>
           <Link
@@ -39,8 +42,8 @@ export default function LandingPage() {
           reviewed instantly.
         </h1>
         <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
-          Revyn connects to your GitHub repos and reviews every PR automatically —
-          catching bugs, flagging risky changes, and summarizing what changed,
+          Revyn connects to your GitHub repos and reviews every PR automatically
+          — catching bugs, flagging risky changes, and summarizing what changed,
           before a human ever has to look.
         </p>
         <div className="flex items-center justify-center gap-3">
@@ -93,7 +96,54 @@ export default function LandingPage() {
         </div>
       </section>
 
-            {/* Footer */}
+      {/* Bento grid */}
+      <section className="max-w-5xl mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {/* Large image tile */}
+          <div className="sm:col-span-2 sm:row-span-2 rounded-xl border border-gray-200 overflow-hidden bg-gray-50">
+            <Image
+              src="/revyn-demo-2.png"
+              alt="Revyn reviewing a pull request in real time"
+              width={1200}
+              height={900}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Stat tile */}
+          <div className="rounded-xl border border-gray-200 bg-black text-white p-6 flex flex-col justify-center">
+            <span className="text-3xl font-semibold">&lt; 30s</span>
+            <span className="text-sm text-gray-300 mt-1">
+              Average time to first review comment
+            </span>
+          </div>
+
+          {/* Feature tile */}
+          <div className="rounded-xl border border-gray-200 p-6 flex flex-col justify-center">
+            <IconMessageCircle size={20} className="mb-2 text-gray-400" />
+            <span className="text-sm font-medium">Inline, not intrusive</span>
+            <span className="text-xs text-gray-500 mt-1">
+              Comments land exactly where the issue is.
+            </span>
+          </div>
+
+          {/* Wide tile */}
+          <div className="sm:col-span-2 rounded-xl border border-gray-200 p-6 flex items-center justify-between">
+            <div>
+              <span className="text-sm font-medium">
+                Works with your existing workflow
+              </span>
+              <p className="text-xs text-gray-500 mt-1">
+                No new tools to learn — reviews show up as normal GitHub PR
+                comments.
+              </p>
+            </div>
+            <IconBrandGithub size={28} className="text-gray-300 shrink-0" />
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="border-t border-gray-200">
         <div className="max-w-5xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-10">
@@ -109,9 +159,21 @@ export default function LandingPage() {
                 Product
               </h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/sign-up" className="hover:text-black">Get started</Link></li>
-                <li><Link href="/sign-in" className="hover:text-black">Sign in</Link></li>
-                <li><Link href="#" className="hover:text-black">Pricing</Link></li>
+                <li>
+                  <Link href="/sign-up" className="hover:text-black">
+                    Get started
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sign-in" className="hover:text-black">
+                    Sign in
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-black">
+                    Pricing
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -120,8 +182,16 @@ export default function LandingPage() {
                 Resources
               </h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="#" className="hover:text-black">Docs</Link></li>
-                <li><Link href="#" className="hover:text-black">Changelog</Link></li>
+                <li>
+                  <Link href="#" className="hover:text-black">
+                    Docs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-black">
+                    Changelog
+                  </Link>
+                </li>
                 <li>
                   <a
                     href="https://github.com/apps/revyn-dev"
@@ -172,8 +242,12 @@ export default function LandingPage() {
               © {new Date().getFullYear()} Revyn. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-xs text-gray-400">
-              <Link href="#" className="hover:text-gray-600">Privacy</Link>
-              <Link href="#" className="hover:text-gray-600">Terms</Link>
+              <Link href="#" className="hover:text-gray-600">
+                Privacy
+              </Link>
+              <Link href="#" className="hover:text-gray-600">
+                Terms
+              </Link>
             </div>
           </div>
         </div>
